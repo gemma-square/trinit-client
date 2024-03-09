@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Typed from 'typed.js';
 import { motion } from 'framer-motion';
 import pic from "../assets/carbon1.svg";
-import FileUploadHandler from './fileuploadhandler.jsx';
 
 export default function Header() {
     const el = React.useRef(null);

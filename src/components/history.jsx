@@ -7,7 +7,7 @@ const ImageListComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/history/');
+        const response = await fetch('http://localhost:8000/api/history');
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
