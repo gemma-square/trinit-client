@@ -17,7 +17,7 @@ function Models() {
                 const jsonData = await response.json();
                 console.log('Received data:', jsonData); // Log received data
                 setData(jsonData); // Assuming the response is an array of objects containing image data
-                setCaption(jsonData[0][1]);
+                
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -92,7 +92,7 @@ function Models() {
     
             const data = await response.json();
             console.log(data);
-            setUploadMessage('Image uploaded successfully!');
+            setUploadMessage('Generating caption and Predicting location...');
         } catch (error) {
             setLoading(false);
             console.error('Error:', error);
@@ -118,6 +118,8 @@ function Models() {
             const coordinates = data1.generated_content[0];
             console.log(coordinates);
             const mapData = data1.generated_content[1];
+            const caption = data1.generated_content[2];
+            setCaption(caption);
             setMapData(mapData);
             if(coordinates !== 'None'){
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${coordinates}`;
@@ -158,7 +160,7 @@ function Models() {
                     <button onClick={handleUpload} tabIndex="0" disabled={loading} className='w-full mt-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200'>Upload</button>
                     {loading && <p className="mt-2 text-center">Loading...</p>}
                     {uploadMessage && <p className="mt-2 text-center text-green-500">{uploadMessage}</p>}
-                    <button onClick={handleNewUpload} id="new-btn" className=' w-full mt-4 py-2 rounded-lg bg-red-300 text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring focus:ring-gray-200'>Upload New Image</button>
+                    {/* <button onClick={handleNewUpload} id="new-btn" className=' w-full mt-4 py-2 rounded-lg bg-red-300 text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring focus:ring-gray-200'>Upload New Image</button> */}
                 </div>
             </div>
             {mapsUrl && (

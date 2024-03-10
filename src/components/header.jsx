@@ -9,7 +9,7 @@ export default function Header() {
     React.useEffect(() => {
         const initializeTyped = () => {
             const typed = new Typed(el.current, {
-                strings: ['Welcome to', 'Machine Learning ^3000'],
+                strings: ['Welcome to', 'Gemma Square ^3000'],
                 typeSpeed: 60,
                 backSpeed: 50,
                 loop: true
@@ -44,7 +44,7 @@ export default function Header() {
                 className="w-1/2 p-12 m-3"
             >
                 <span ref={el} className="text-7xl font-semibold"/>
-                <p className="mt-16 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, rerum? Error officia temporibus voluptatum amet illum magni, eos itaque impedit vero veniam, nostrum reprehenderit quod repellat vel ipsum, corporis cum.</p>
+                <p className="mt-16 text-lg">Our model generates caption for the remote sensing data image form the satellite which is very much important , and our model is very much efficient</p>
             </motion.div>
             <div className="w-1/2">
                 <img className="mx-auto size-10/12" src={pic} alt="Carbon" />
